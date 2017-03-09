@@ -1,0 +1,3 @@
+default: nhmmer --noali --max  --cpu $(nproc) -o $HMMER_OUT --tblout $HMMER_LIB $STOCKHOLM  $FASTA_INPUT && grep -v "#" $HMMER_LIB | cut -d " " -f1 | sed "s/^/>/g" > "$CACHE/headers.txt" && grep -A1 -F -f "$CACHE/headers.txt" $FASTA_INPUT | sed "/^--\$/d" > "$CACHE/Extracted16S.fa" &&  cd ${PREFIX}src/Julia/ &&  julia  ${PREFIX}src/Julia/ARK.jl -i  "$CACHE/Extracted16S.fa" -o $CAMI_OUT -n 1 -t Quikr  -k kmer_counts_per_sequence 
+
+
