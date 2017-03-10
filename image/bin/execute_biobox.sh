@@ -28,7 +28,8 @@ fi
 FASTQ_INPUT="$CACHE/combined.fq"
 cat $READS > $FASTQ_INPUT
 FASTA_INPUT="$CACHE/input.fa"
-CAMI_OUT="$OUTPUT/out.profile"
+OUT_NAME="out.profile"
+CAMI_OUT="$OUTPUT/${OUT_NAME}"
 HMMER_OUT="$CACHE/nhmmer.out"
 HMMER_LIB="$CACHE/nhmmer.tlb"
 
@@ -42,6 +43,6 @@ cat << EOF > ${OUTPUT}/biobox.yaml
 version: 1.0.0
 arguments:
     profiling:
-      - value: ${CAMI_OUT}
+      - value: ${OUT_NAME}
         type: bioboxes.org:/profling:0.9
 EOF
