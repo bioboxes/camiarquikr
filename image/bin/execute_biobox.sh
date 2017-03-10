@@ -42,6 +42,6 @@ cat << EOF > ${OUTPUT}/biobox.yaml
 version: 1.0.0
 arguments:
     profiling:
-      - path: ${CAMI_OUT}
-        value: bioboxes.org:/profling:0.9
+      - value: ${CAMI_OUT}
+        type: bioboxes.org:/profling:0.9
 EOF
