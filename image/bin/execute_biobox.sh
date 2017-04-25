@@ -43,6 +43,6 @@ cat << EOF > ${OUTPUT}/biobox.yaml
 version: 1.0.0
 arguments:
     profiling:
-      - value: ${OUT_NAME}
+      - value: out.profile
         type: bioboxes.org:/profling:0.9
 EOF
